@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+ 		<title>Поймай мыша</title>
+ 		<link rel="stylesheet" type="text/css" href="./Styles/Styles.css">
+ 		<link rel="stylesheet" type="text/css" href="./Fonts/Fonts.css">
+	</head>
+	<body>
+ 		<div class='main_wrapper'>
+ 			<div class="header-wrap">
+ 				<div class="score-box">
+
+  					<div class="scores-lives-wrap">
+	 					<div class="scores">
+	 						<div class='scores_counter' id='scores_counter'>
+	 							128
+	 						</div>
+	 					</div>
+
+	 					<div class="lives-box">
+	 						<div class="live-wrap">
+		 						<img class="live" id='live-one' src="Images/heart.png" alt="сердечко">
+		 						<img class="live" id='live-two' src="Images/heart.png" alt="сердечко">
+		 						<img class="live" id='live-three' src="Images/heart.png" alt="сердечко">
+		 					</div>	
+	 					</div>
+	 				</div>
+
+	 				<div class="speed-box">
+	 					<div class='speed_counter' id='speed_counter'>
+	 							1
+	 					</div>
+ 					</div>
+  				</div>
+
+ 				<div class="menu">
+ 					<button class="menu_start" id='start'> НАЧАТЬ </button>
+ 					<button class="menu_question" is='question'> ? </button>
+ 				</div>
+ 			</div>
+
+ 			<!-- Основное окно -->
+ 			<div class="ellipse-wrap">
+
+ 				<div class="ellipse-three-flex">
+	 				<div class="ellipse ellipse-one" id='ellipse-one'>
+	 				</div>
+	 				<div class="ellipse ellipse-two" id='ellipse-two'>
+	 				</div>
+					<div class="ellipse ellipse-three" id='ellipse-three'>
+	 				</div>
+	 			</div>
+
+				<div class="ellipse-two-flex">
+	 				<div class="ellipse ellipse-four" id='ellipse-four'>
+	 				</div>
+	 				<div class="ellipse ellipse-five" id='ellipse-five'>
+	 				</div>
+	 			</div>
+ 			</div>
+ 			<!-- Основное окно: GAME OVER -->
+ 			<div class='specification-wrap'>
+
+ 			  	<div class='specification_info-box__rules'>
+
+		 			<div class='specification_message-box'>
+			 			<div class='specification_message__rules' id='message_rules'>
+	 					ПРАВИЛА ИГРЫ
+	 					</div>	
+		 				
+		 			</div>
+		 			
+					<div class='specification_info__rules' id='rules'> 
+ 			  			<ol>
+						 <li>В одной из 5-ти норок в случайном порядке периодически появляется мышь 🐭 и другие emoji 🐭🐼🐻🦊🐱🐱...</li>
+						 <li>Нужно поймать мышь. При клике по мыши игроку добавляется +10 очков.</li>
+						 <li>После каждой пятой пойманной мыши скорость её случайного появления увеличивается.</li>
+						 <li>Если клик был выполнен по другому emoji, то у игрока отнимается жизнь. Всего 3 жизни. Если жизни закончились, то игра останавливается.</li>
+						</ol>
+ 			  		</div>
+
+					<button class='specification_ok-box'>
+		 				<div class="specification_ok" id='button_ok'> OK </div>
+ 					</button>
+ 				</div>
+
+
+ 				<div class="specification_info-box__gameover">
+					<div class='specification_message__gameover' id='message_gameover'>
+						ИГРА ЗАВЕРШЕНА
+			 		</div>
+
+ 			  		<div class="specification_info__congrats">
+ 			  			<div class="congrats">
+ 			  				Поздравляем! Вы набрали:
+ 			  			</div>
+ 			  			<div class="congrats-scores-amount" id='scores-amount'>
+ 			  				512
+ 			  			</div>
+ 			  			<div class="congrats-scores">
+ 			  				очков!
+ 			  			</div>
+ 			  		</div>
+
+		 			<button class='specification_ok-box'>
+		 				<div class="specification_ok" id='button_ok'> OK </div>
+ 					</button>
+ 				</div>
+
+ 			  	</div>
+
+ 			</div>
+
+		</div>
+		<script type="text/javascript" src="./Script/Script.js" charset="utf-8"></script>
+	</body>
+</html>
+
+
