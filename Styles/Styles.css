@@ -176,16 +176,29 @@ html, body {
 .ellipse-two{
     margin-top: 100px;
 }
+/*Опционально выбирается один из двух последующих блоков (с помощью display: none;)
+*/
 
-.specification-wrap{
-	position: absolute;
-	top: 210px;
-	left: 50%;
-	transform: translateX(-50%);
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
+			.specification-rules{
+				position: absolute;
+				top: 210px;
+				left: 50%;
+				transform: translateX(-50%);
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				display: none;
+			}
+
+			.specification-gameover{
+				position: absolute;
+				top: 210px;
+				left: 50%;
+				transform: translateX(-50%);
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				}
 
 .specification_message-box{
 	width: 517px;
@@ -210,8 +223,6 @@ html, body {
 	color: #27A8F3;
 }
 
-/*Опционально выбирается один из двух последующих блоков (с помощью display: none;)
-*/
 .specification_info-box__rules{
 	width: 821px;
 	height: 503px;
@@ -223,7 +234,6 @@ html, body {
     justify-content: space-between;
     flex-direction: column;
     align-items: center;
-    display: none;
 }
 
 .specification_info-box__gameover{
@@ -246,7 +256,7 @@ html, body {
 	padding: 0 20px;
 }
 
-.specification_ok-box{
+.specification_ok{
 	width: 241px;
 	height: 61px;
 	background: #FFE500;
@@ -256,18 +266,16 @@ html, body {
 	align-items: center;
 	justify-content: center;
 	margin-bottom: -5%;
-}
 
-.specification_ok-box:hover {
-    background: #FFC700; 
-    color: #ffe; 
-   } 
-
-.specification_ok{
 	font-weight: 800;
 	font-size: 35px;
 	color: white;
 }
+
+.specification_ok:hover {
+    background: #FFC700; 
+    color: #ffe; 
+   } 
 
 
 .specification_info__congrats{

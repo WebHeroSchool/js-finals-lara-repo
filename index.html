@@ -36,7 +36,7 @@
 
  				<div class="menu">
  					<button class="menu_start" id='start'> НАЧАТЬ </button>
- 					<button class="menu_question" is='question'> ? </button>
+ 					<button class="menu_question" id='question'> ? </button>
  				</div>
  			</div>
 
@@ -60,7 +60,7 @@
 	 			</div>
  			</div>
  			<!-- Основное окно: GAME OVER -->
- 			<div class='specification-wrap'>
+ 			<div class='specification-rules'>
 
  			  	<div class='specification_info-box__rules'>
 
@@ -80,16 +80,20 @@
 						</ol>
  			  		</div>
 
-					<button class='specification_ok-box'>
-		 				<div class="specification_ok" id='button_ok'> OK </div>
+					<button class='specification_ok' id='clickOk'>
+		 			OK
  					</button>
  				</div>
+ 			</div>
 
-
+ 			<div class='specification-gameover'>
  				<div class="specification_info-box__gameover">
+
+ 				<div class="specification_message-box">
 					<div class='specification_message__gameover' id='message_gameover'>
 						ИГРА ЗАВЕРШЕНА
 			 		</div>
+				</div>
 
  			  		<div class="specification_info__congrats">
  			  			<div class="congrats">
@@ -103,17 +107,15 @@
  			  			</div>
  			  		</div>
 
-		 			<button class='specification_ok-box'>
-		 				<div class="specification_ok" id='button_ok'> OK </div>
+					<button class='specification_ok' id='clickOk'>
+		 			OK
  					</button>
+ 			
  				</div>
-
- 			  	</div>
-
  			</div>
 
-		</div>
-		<script type="text/javascript" src="./Script/Script.js" charset="utf-8"></script>
+ 			</div>
+		<script src="./Script/Script.js"></script>
 	</body>
 </html>
 
