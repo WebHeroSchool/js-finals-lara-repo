@@ -20,7 +20,7 @@
 
 	 					<div class="lives-box">
 	 						<div class="live-wrap">
-		 						<img class="live" id='live-one' src="Images/heart.png" alt="сердечко">
+		 						<img class="live"  src="Images/heart.png" alt="сердечко">
 		 						<img class="live" id='live-two' src="Images/heart.png" alt="сердечко">
 		 						<img class="live" id='live-three' src="Images/heart.png" alt="сердечко">
 		 					</div>	
@@ -44,22 +44,22 @@
  			<div class="ellipse-wrap">
 
  				<div class="ellipse-three-flex">
-	 				<div class="ellipse ellipse-one" id='ellipse-one'>
+	 				<div class="ellipse ellipse-one"> <p class="ellipse_text"></p>
 	 				</div>
-	 				<div class="ellipse ellipse-two" id='ellipse-two'>
+	 				<div class="ellipse ellipse-two"><p class="ellipse_text"></p>
 	 				</div>
-					<div class="ellipse ellipse-three" id='ellipse-three'>
+					<div class="ellipse ellipse-three"><p class="ellipse_text"></p>
 	 				</div>
 	 			</div>
 
 				<div class="ellipse-two-flex">
-	 				<div class="ellipse ellipse-four" id='ellipse-four'>
+	 				<div class="ellipse ellipse-four"><p class="ellipse_text"></p>
 	 				</div>
-	 				<div class="ellipse ellipse-five" id='ellipse-five'>
+	 				<div class="ellipse ellipse-five"><p class="ellipse_text"></p>
 	 				</div>
 	 			</div>
  			</div>
- 			<!-- Основное окно: GAME OVER -->
+ 			<!-- Основное окно: RULES -->
  			<div class='specification-rules'>
 
  			  	<div class='specification_info-box__rules'>
@@ -85,12 +85,13 @@
  					</button>
  				</div>
  			</div>
+ 			<!-- Основное окно: GAME OVER -->
 
- 			<div class='specification-gameover'>
+ 			<div class='specification-gameover' id='gameover'>
  				<div class="specification_info-box__gameover">
 
  				<div class="specification_message-box">
-					<div class='specification_message__gameover' id='message_gameover'>
+					<div class='specification_message__gameover'>
 						ИГРА ЗАВЕРШЕНА
 			 		</div>
 				</div>
@@ -107,7 +108,7 @@
  			  			</div>
  			  		</div>
 
-					<button class='specification_ok' id='clickOk'>
+					<button class='specification_ok' id='gameoverOk'>
 		 			OK
  					</button>
  			
