@@ -6,7 +6,7 @@ var arrEmoji =['🐭','🐼','🐻','🦊','🐱'];
 // var arrEllipses = [ellipseOne, ellipseTwo, ellipseThree, ellipseFour, ellipseFive];
 
 var arrEllipses = document.querySelectorAll('.ellipse_text');
-console.log(arrEllipses)
+//console.log(arrEllipses)
 
 setTimeout(function () {
 	var pickedEllipse = null; // initially all ellipses are empty, nothing to clear
@@ -23,7 +23,7 @@ setTimeout(function () {
 		pickedEllipse = arrEllipses[ellipseRandom];
 		pickedEllipse.innerHTML = arrEmoji[emojiRandom];
 	}
-  setInterval(funcAppearance, 2000);
+  setInterval(funcAppearance, 1500);
 }, 100);
 
 function funcOnclicks() {
@@ -41,26 +41,26 @@ function funcOnclicks() {
 	for (var ellipse of arrEllipses) {
 		function funcClosure(ellipse) {
 			ellipse.onclick = function() {
-				if(ellipse.innerHTML == '🐭') { 
-				// if(event.target.innerHTML == '🐭') { //второй вариант решения (в function 'event')
-					mouseCounter+=1;
-					console.log('Кликнули по мышке 🐭')
-				} else {
-					console.log('Кликнули по ' + ellipse.innerHTML)
-
-					j++;
-					lifes[lifeCounter-j].style.display = "none";		
-						if (lifeCounter-j === 0){
-							gameoverWindow.style.display = "block"; 
-						} 
-						gameoverOk.onclick = function() {
-							gameoverWindow.style.display = "none"; 
-						}	
-
-				}				
+				console.log('Кликнули по ' + ellipse.innerHTML)			
 			}
 		}
 		funcClosure(ellipse);
 	}
 }
 funcOnclicks();
+
+				//закомментированные наработки по следующим шагам
+				// if(ellipse.innerHTML == '🐭') { 
+				// // if(event.target.innerHTML == '🐭') { //второй вариант решения (в function 'event')
+				// 	mouseCounter+=1;
+				// } else {
+
+					// j++;
+					// lifes[lifeCounter-j].style.display = "none";		
+					// 	if (lifeCounter-j === 0){
+					// 		gameoverWindow.style.display = "block"; 
+					// 	} 
+					// 	gameoverOk.onclick = function() {
+					// 		gameoverWindow.style.display = "none"; 
+					// 	}	
+				// }	
