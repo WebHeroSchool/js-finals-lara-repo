@@ -1,17 +1,14 @@
-
-//Шаг 2. 🐭🐼🐻🦊🐱 Появление emoji в случайной норке и обработка клика по emoji.
-//Вывод информации о emoji в консоль. 
-
-var arrEmoji =['🐭','🐼','🐻','🦊','🐱'];
-// var arrEllipses = [ellipseOne, ellipseTwo, ellipseThree, ellipseFour, ellipseFive];
+(function () { 
+var arrEmoji =['🐭','🐼'/*,'🐻','🦊','🐱'*/];
 
 var arrEllipses = document.querySelectorAll('.ellipse_text'); // нельзя из глобального переместить
-//console.log(arrEllipses)
 var question = document.getElementById('question');
 var rules = document.getElementById('rules');
 var rulesOk = document.getElementById('rulesOk');
 var start = document.getElementById('start');
 var pickedEllipse = null; // initially all ellipses are empty, nothing to clear
+var scores = document.getElementById('scores_counter');
+var mouseCounter = 0;
 
 function funcAppearance() {
 	marker = true;
@@ -22,7 +19,6 @@ function funcAppearance() {
 	var emojiRandom = Math.round(Math.random() * (arrEmoji.length-1) );
 	var ellipseRandom = Math.round(Math.random() * (arrEllipses.length-1) );
 	// remember picked ellipse for next function call
-	
 	pickedEllipse = arrEllipses[ellipseRandom];
 	pickedEllipse.innerHTML = arrEmoji[emojiRandom];
 }
@@ -35,31 +31,34 @@ rulesOk.onclick = function() {
 }
 
 var marker = true;
+var timerId;
 
 start.onclick = function() {
-	var gameTimer = 2000;
-	var timerId = setInterval(funcAppearance, gameTimer);
-
-	var speedCounter = document.getElementById('speed_counter');	
-	speedCounter = 1;
-
-	var gameoverWindow = document.getElementById('gameover');
-	var gameoverOk = document.getElementById('gameoverOk');
-
-	var scores = document.getElementById('scores_counter');
-	var mouseCounter = 0;
-
+	mouseCounter = 0;
+	scores.innerHTML = mouseCounter;
+	clearInterval(timerId); 
+	var gameTimer = 1200;
 	var speed = document.getElementById('speed_counter');
 	var speedCounter = 1;
-
+	speed.innerHTML = speedCounter;
+	timerId = setInterval(funcAppearance, gameTimer);
+	
+	var lifes = document.querySelectorAll('.live');			
+	
+	lifes.forEach(function(hearts){	
+		hearts.style.display = 'block'; 
+	});
+	console.log(gameTimer);
+	var gameoverWindow = document.getElementById('gameover');
+	var gameoverOk = document.getElementById('gameoverOk');
 	var j = 0;
 	// START
-	//for (var ellipse of arrEllipses) {
-		//function funcClosure(ellipse) {
 	arrEllipses.forEach(function(ellipse) {
 		ellipse.onclick = function() {
 			if (marker) {
+//теоретически, раз я теперь удаляю эмоджу сразу после клика (по коммент Азиза) - можно убрать маркер, но я оставлю, чтобы вы видели, что я научилась такой фишке :)
 				if(ellipse.innerHTML == '🐭') { 
+					pickedEllipse.innerHTML = '';
 						// if(event.target.innerHTML == '🐭') { //второй вариант решения (в function 'event')
 					mouseCounter+=10;
 					scores.innerHTML = mouseCounter;
@@ -76,7 +75,7 @@ start.onclick = function() {
 						console.log('Скорость игры:' + gameTimer*indexTimer);
 					}				
 				} else {
-					var lifes = document.querySelectorAll('.live');
+					pickedEllipse.innerHTML = '';					
 					var lifeCounter = 3;
 					//console.log(lifes);
 					j++;
@@ -86,7 +85,13 @@ start.onclick = function() {
 						scoresAmount.innerHTML = mouseCounter;						
 						gameoverWindow.style.display = "block"; 
 						clearInterval(timerId);
-
+						mouseCounter = 0;
+						scores.innerHTML = mouseCounter;
+						speedCounter = 1;
+						speed.innerHTML = speedCounter;
+						lifes.forEach(function(hearts){	
+							hearts.style.display = 'block'; 
+						});
 					} 
 					gameoverOk.onclick = function() {
 						gameoverWindow.style.display = "none"; 
@@ -95,14 +100,7 @@ start.onclick = function() {
 				}
 				marker = false;
 			}
-
 		}
-		
-		// if (!wasAnimalClicked) {
-			//funcClosure(ellipse);
-		//}
-		//}
-	//}
-	// END
 	});
 }
+})();
