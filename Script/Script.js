@@ -56,7 +56,6 @@ start.onclick = function() {
 	var gameoverOk = document.getElementById('gameoverOk');
 	var j = 0;
 	// START
-	pickedEllipse.innerHTML = '';
 	arrEllipses.forEach(function(ellipse) {
 		ellipse.onclick = function() {
 			if (marker) {
@@ -106,5 +105,8 @@ start.onclick = function() {
 			}
 		}
 	});
+	if (pickedEllipse!==null) {
+			pickedEllipse.innerHTML = '';
+		}
 }
 })();
