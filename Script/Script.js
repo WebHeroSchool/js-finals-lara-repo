@@ -105,5 +105,8 @@ start.onclick = function() {
 			}
 		}
 	});
+	if (pickedEllipse!==null) {
+			pickedEllipse.innerHTML = '';
+		}
 }
 })();
