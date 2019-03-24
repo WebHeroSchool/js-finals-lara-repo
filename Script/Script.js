@@ -41,7 +41,6 @@ start.onclick = function() {
 	clearInterval(timerId); 
 
 	var gameTimer = 1400;
-
 	var speed = document.getElementById('speed_counter');
 	var speedCounter = 1;
 	speed.innerHTML = speedCounter;
@@ -57,6 +56,7 @@ start.onclick = function() {
 	var gameoverOk = document.getElementById('gameoverOk');
 	var j = 0;
 	// START
+	pickedEllipse.innerHTML = '';
 	arrEllipses.forEach(function(ellipse) {
 		ellipse.onclick = function() {
 			if (marker) {
